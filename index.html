@@ -37,7 +37,7 @@
         h1 { font-size: calc(1.8rem + 1.5vw); margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); line-height: 1.2; }
         .hero-sub { font-size: 1.1rem; color: #f1c40f; margin: 15px 0 25px; }
 
-        /* חברות ביטוח - התאמה לנייד */
+        /* חברות ביטוח */
         .insurance-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
         .ins-box { background: white; color: black; padding: 8px 12px; border-radius: 6px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
 
@@ -47,35 +47,38 @@
         /* אודותינו */
         .about-section { padding: 60px 15px; background: #fff; text-align: center; }
         .about-card { max-width: 900px; margin: 0 auto; background: #f9f9f9; padding: 25px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); border-right: 6px solid #e74c3c; }
-        .about-card h2 { font-size: 1.8rem; margin-bottom: 20px; }
-        .about-card p { font-size: 1.1rem; line-height: 1.5; color: #333; }
-        
         .phones-container { background: #2c3e50; color: #fff; padding: 15px; border-radius: 10px; display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
-        .phone-link { color: #f1c40f; text-decoration: none; font-weight: bold; font-size: 1.3rem; border: 1px border rgba(241, 196, 15, 0.3); padding: 5px; }
+        .phone-link { color: #f1c40f; text-decoration: none; font-weight: bold; font-size: 1.3rem; }
+
+        /* טופס יצירת קשר - חדש */
+        .contact-form-section { padding: 60px 15px; background: #f4f4f4; text-align: center; }
+        .form-container { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: right; }
+        .form-container h2 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; font-size: 1rem; }
+        .submit-btn { background: #e74c3c; color: white; border: none; padding: 15px 20px; width: 100%; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #c0392b; }
 
         /* גלריה רספונסיבית */
-        .gallery-section { padding: 60px 10px; background: #f4f4f4; text-align: center; }
+        .gallery-section { padding: 60px 10px; background: #fff; text-align: center; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; max-width: 1200px; margin: 30px auto; }
         .gallery-item { height: 150px; border-radius: 8px; overflow: hidden; cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .gallery-item img:hover { transform: scale(1.05); }
 
         /* מודאל תמונה */
         .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
         .modal img { max-width: 95%; max-height: 80%; border-radius: 5px; }
         .close-modal { position: absolute; top: 20px; right: 25px; color: white; font-size: 40px; cursor: pointer; }
 
-        /* התאמות ספציפיות למסכים קטנים מאוד */
         @media (max-width: 600px) {
             nav { flex-direction: column; padding: 10px; height: auto; }
             .logo { margin-bottom: 10px; font-size: 1.1rem; }
             .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
-            .hero { padding-top: 140px; }
-            .insurance-grid { gap: 5px; }
-            .ins-box { font-size: 0.75rem; padding: 6px 10px; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); } /* 2 תמונות בשורה בנייד */
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* צור קשר */
         footer { padding: 40px 20px; text-align: center; background: #2c3e50; color: white; }
     </style>
 </head>
@@ -87,7 +90,7 @@
             <li><a href="#home">בית</a></li>
             <li><a href="#about">אודות</a></li>
             <li><a href="#gallery">גלריה</a></li>
-            <li><a href="#contact">צור קשר</a></li>
+            <li><a href="#contact">השארת פרטים</a></li>
         </ul>
     </nav>
 
@@ -103,14 +106,8 @@
             
             <p style="font-weight: bold; font-size: 0.9rem;">הסדר עם חברות הביטוח:</p>
             <div class="insurance-grid">
-                <div class="ins-box">שלמה</div>
-                <div class="ins-box">הראל</div>
-                <div class="ins-box">מגדל</div>
-                <div class="ins-box">שרביט</div>
-                <div class="ins-box">שומרה</div>
-                <div class="ins-box">מנורה</div>
-                <div class="ins-box">איילון</div>
-                <div class="ins-box">הפניקס</div>
+                <div class="ins-box">שלמה</div><div class="ins-box">הראל</div><div class="ins-box">מגדל</div><div class="ins-box">שרביט</div>
+                <div class="ins-box">שומרה</div><div class="ins-box">מנורה</div><div class="ins-box">איילון</div><div class="ins-box">הפניקס</div>
             </div>
 
             <a href="tel:0503090287" class="call-btn">📞 חייג עכשיו: 050-3090287</a>
@@ -120,18 +117,33 @@
     <section id="about" class="about-section">
         <div class="about-card">
             <h2>אודותינו</h2>
-            <p>
-                <strong>הרכב שלכם נפגע בתאונה?</strong> תתקשרו אלינו ואנחנו נדאג לכם להכל מרגע התאונה עד מסירת הרכב אחרי תיקון תוך שמירה על עבודה מקצועית ואיכותית!
-            </p>
-            <div style="text-align: right; display: inline-block; margin: 15px 0; font-size: 0.95rem;">
-                <p>🚩 רכב חלופי מהיום הראשון</p>
-                <p>🚩 התאמת צבע מושלמת</p>
-                <p>🚩 אחריות לצבע ולתיקון</p>
-            </div>
+            <p><strong>הרכב שלכם נפגע בתאונה?</strong> תתקשרו אלינו ואנחנו נדאג לכם להכל מרגע התאונה עד מסירת הרכב אחרי תיקון תוך שמירה על עבודה מקצועית ואיכותית!</p>
             <div class="phones-container">
                 <a href="tel:0503090287" class="phone-link">📱 050-3090287</a>
                 <a href="tel:0506591857" class="phone-link">📱 050-6591857</a>
             </div>
+        </div>
+    </section>
+
+    <!-- מקטע צור קשר חדש -->
+    <section id="contact" class="contact-form-section">
+        <div class="form-container">
+            <h2>השארת פרטים לחזרה</h2>
+            <form action="https://formspree.io" method="POST">
+                <div class="form-group">
+                    <label>שם מלא:</label>
+                    <input type="text" name="name" placeholder="הכנס שם מלא" required>
+                </div>
+                <div class="form-group">
+                    <label>טלפון:</label>
+                    <input type="tel" name="phone" placeholder="הכנס מספר טלפון" required>
+                </div>
+                <div class="form-group">
+                    <label>הודעה (אופציונלי):</label>
+                    <textarea name="message" rows="3" placeholder="ספר לנו במה נוכל לעזור"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">שלח הודעה למשרד</button>
+            </form>
         </div>
     </section>
 
@@ -144,20 +156,12 @@
             <div class="gallery-item" onclick="openModal(this)"><img src="car4.jpg" alt="עבודה"></div>
             <div class="gallery-item" onclick="openModal(this)"><img src="car5.jpg" alt="עבודה"></div>
             <div class="gallery-item" onclick="openModal(this)"><img src="car6.jpg" alt="עבודה"></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="car7.jpg" alt="עבודה"></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="car8.jpg" alt="עבודה"></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="car9.jpg" alt="עבודה"></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="car10.jpg" alt="עבודה"></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="car11.jpg" alt="עבודה"></div>
-            <div class="gallery-item" onclick="openModal(this)"><img src="car12.jpg" alt="עבודה"></div>
         </div>
     </section>
 
-    <footer id="contact">
-        <h2 style="margin-bottom: 10px;">צור קשר</h2>
-        <p>אזור תעשייה מעיליא</p>
-        <p>מייל: shakeeb.shama@hotmail.co.il</p>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">© 2026 עולם הרכב ש.א בע"מ</p>
+    <footer>
+        <p>אזור תעשייה מעיליא | מייל: office@worldcar.co.il</p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">© 2026 עולם הרכב ש.א בע"מ</p>
     </footer>
 
     <div id="myModal" class="modal" onclick="closeModal()">
@@ -172,14 +176,8 @@
             modal.style.display = "flex";
             modalImg.src = element.querySelector('img').src;
         }
-
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-        
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") closeModal();
-        });
+        function closeModal() { document.getElementById("myModal").style.display = "none"; }
+        document.addEventListener('keydown', function(e) { if (e.key === "Escape") closeModal(); });
     </script>
 
 </body>
